@@ -1,0 +1,190 @@
+/*
+--- 01TYPOGRAPH SYSTEM
+
+-- Font size (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+-Font weight
+Default 400
+Medium 500
+Semi-bold 600
+bold 700
+
+-Line heights
+Default: 1
+Small: 1.05
+Miduam: 1.2
+Paragraph: 1.6
+
+-Letter spacing
+
+-0.5px
+i.2px
+0.75px
+
+
+--- 02 COLORS
+
+-Primary: #e67e22
+-Tints:
+#fdf2e9
+#fae5d3
+-Shades: #cf711f;
+
+-Accents:
+-Garys: 
+#555 
+#333
+
+--- 03 SHADOWS
+
+--- 04 BORDER-RADIOUS
+
+Defult: 9px
+
+--- 05 WHITESPACE
+
+--SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  /* default 1rem = 10px */
+  /* font-size: 10px; */
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Persentage of user's bowser font-size setting*/
+  font-size: 62.5%;
+
+  /* The different between em rem */
+
+  /* While em is relative to the font-size of its direct or nearest parent, rem is only relative to the html (root) font-size. */
+
+  /* Why font-size: 62.5% instead of font-size: 10px*/
+
+  /* If a visually impaired user has reset their base browser size (up or down), I want to respect that, so I want my site's typography to scale proportionally to his default browser settings.*/
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  color: #555;
+}
+
+/**************************************/
+/* GENRAL REUSABLE COMPONENTS */
+/**************************************/
+
+.container {
+  /* 1140px */
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--center-v {
+  align-items: center;
+}
+
+.heading-primary,
+.heading-secondary {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #333;
+  /* color: #45260a; */
+  /* color: #343a40; */
+}
+.heading-primary {
+  font-size: 5.2rem;
+  line-height: 1.05;
+  margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+
+.head-tertiary {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+}
+
+.subheading {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #cf711f;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.75px;
+}
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 1.6rem 3.2rem;
+  border-radius: 9px;
+  font-weight: 600;
+  /* Animation */
+  /* Put the transition on orignal "state" */
+  transition: background-color 0.3s;
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: #e67e22;
+  color: #fff;
+}
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: #cf711f;
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #fdf2e9;
+
+  /* border: 3px solid #fff; */
+
+  /* Trick to add border inside */
+  box-shadow: inset 0 0 0 3px #fff;
+  /* box-shadow: inset <offset-x> <offset-y> <blur-radius> <spread-radius> <color>*/
+}
+
+.margin-right-sm {
+  margin-right: 1.6rem;
+}
